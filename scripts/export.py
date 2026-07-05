@@ -4,6 +4,7 @@
 #     "kokoro==0.8.4",
 #     "onnx==1.17.0",
 #     "onnxruntime==1.20.1",
+#     "onnxscript==0.5.0",
 #     "sounddevice==0.5.1",
 # ]
 #
@@ -52,6 +53,7 @@ def export_onnx(model, output):
             "waveform": {0: "num_samples"},
         },
         do_constant_folding=True,
+        dynamo=False,
     )
 
     print("export kokoro.onnx ok!")
